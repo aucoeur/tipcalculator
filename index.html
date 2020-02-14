@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <h1>Basic Tip Calculator and Bill Splitter</h1>
+    <div class="calc">
+        Bill Amount: <input type="text" id="input-bill"><br>
+        Tip Percent: <input type="text" id="input-tip"> % <br>
+        Number of People: <input type="text" id="input-people" value="1">
+        <hr>
+        TIP: $<span id="display-tip"></span><br />
+        TOTAL: $<span id="display-total"></span>
+        <hr>
+        SPLIT PER PERSON: $ <span id="display-split"></span>
+    </div>
+
+    <script>
+        const inputBill = document.getElementById('input-bill')
+        const inputTip = document.getElementById('input-tip')
+        const inputPeople = document.getElementById('input-people')
+        const displayTip = document.getElementById('display-tip')
+        const displayTotal = document.getElementById('display-total')
+        const displaySplit = document.getElementById('display-split')
+
+        function calcTotal(bill, tip) {
+            return bill + tip
+        }
+
+        // function split() {
+        //     return calcTotal(bill, tip) / people
+        // }
+
+
+        inputBill.addEventListener('change', function(e) {
+            let bill = parseFloat(inputBill.value)
+            let percent = parseInt(inputTip.value)
+            let people = parseInt(inputPeople.value)
+
+            if (isNaN(inputTip)) {
+                tip = 0;
+            } else {
+                tip = bill * percent / 100
+            }
+
+            if (isNaN(inputPeople)) {
+                people = 1
+            }
+
+            let split = calcTotal(bill, tip)/people
+
+            displayTip.textContent = tip.toFixed(2)
+            displayTotal.textContent = calcTotal(bill, tip).toFixed(2)
+            displaySplit.textContent = split.toFixed(2)
+        })
+
+        inputTip.addEventListener('change', function(e) {
+            let bill = parseFloat(inputBill.value)
+            let percent = parseInt(inputTip.value)
+            let people = parseInt(inputPeople.value)
+
+            let tip = bill * percent / 100
+
+            if (isNaN(inputPeople)) {
+                people = 1
+            }
+
+            let split = calcTotal(bill, tip)/people
+
+            displayTip.textContent = tip.toFixed(2)
+            displayTotal.textContent = calcTotal(bill, tip).toFixed(2)
+            displaySplit.textContent = split.toFixed(2)
+        })
+
+        inputPeople.addEventListener('change', function(e) {
+            let bill = parseFloat(inputBill.value)
+            let percent = parseInt(inputTip.value)
+            let people = parseInt(inputPeople.value)
+
+            let tip = bill * percent / 100
+
+            let split = calcTotal(bill, tip)/people
+
+            displayTip.textContent = tip.toFixed(2)
+            displayTotal.textContent = calcTotal(bill, tip).toFixed(2)
+            displaySplit.textContent = split.toFixed(2)
+        })
+        
+
+    </script>
+</body>
+</html>
