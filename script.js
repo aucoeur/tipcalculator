@@ -10,7 +10,7 @@ function calcTotal() {
     let percent = parseInt(inputTip.value)
     let people = parseInt(inputPeople.value)
 
-    let tip = bill * (percent/100)
+    let tip = bill * (percent / 100)
     let total = bill + tip
     let split = total / people
 
@@ -19,14 +19,46 @@ function calcTotal() {
     displaySplit.textContent = `\$ ${split.toFixed(2)}`
 }
 
-inputBill.addEventListener('change', function(e) {
+inputBill.addEventListener('change', function (e) {
     calcTotal()
 })
 
-inputPeople.addEventListener('change', function(e) {
+inputPeople.addEventListener('change', function (e) {
     calcTotal()
 })
 
-inputTip.addEventListener('change', function(e) {
+inputTip.addEventListener('change', function (e) {
     calcTotal()
 })
+
+function minusTip() {
+    let previous = inputTip.value
+    if (previous > 0) {
+        previous--
+        inputTip.value = previous
+    }
+    calcTotal()
+}
+
+function plusTip() {
+    let previous = inputTip.value
+    previous++
+    inputTip.value = previous
+    calcTotal()
+}
+
+function minusPeople() {
+    let previous = inputPeople.value
+    if (previous > 1) {
+        previous--
+        inputPeople.value = previous
+    }
+    calcTotal()
+}
+
+function plusPeople() {
+    let previous = inputPeople.value
+    previous++
+    inputPeople.value = previous
+    calcTotal()
+}

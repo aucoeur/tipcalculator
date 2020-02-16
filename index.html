@@ -17,16 +17,16 @@
             <div class="container">
                 <span>Total:</span>
                 <div class="input-box">
-                    <input type="text" id="input-total" value="0">
+                    <input type="text" id="input-bill" value="0">
                 </div>
             </div>
 
             <div class="container">
                 <span>Tip Percent:</span>
                 <div class="input-box">
-                    <button>-</button>
+                    <button id="minus" onclick="minusTip()">-</button>
                     <input type="text" id="input-tip" value="0">
-                    <button>+</button>
+                    <button onclick="plusTip()">+</button>
                 </div>
 
             </div>
@@ -34,9 +34,9 @@
             <div class="container">
                 <span>Number of People:</span>
                 <div class="input-box">
-                    <button>-</button>
+                    <button onclick="minusPeople()">-</button>
                     <input type="text" id="input-people" value="1">
-                    <button>+</button>
+                    <button onclick="plusPeople()">+</button>
                 </div>
             </div>
         </div>
