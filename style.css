@@ -1,3 +1,79 @@
 body {
-    background-color: rgb(206, 206, 206);
+    background-color: rgb(245, 245, 245);
+    font-family: 'Roboto';
+    font-size: 1.2em;
+    color: rgb(45, 45, 45);
+}
+
+.calc {
+    background-color: #ffffff;
+    border: 1px solid  rgb(48, 48, 48);
+    border-radius: 0.25em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-between;
+    width: 85%;
+    margin: auto;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 30%;
+    font-size: 0.75em;
+    border-right: 1px solid  rgb(70, 70, 70);
+}
+
+.display > span, .container > .input-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.input-box {
+    align-self: center;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 60%;
+}
+
+.left > span {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+span#display-split {
+   display: flex;
+   align-items: center;
+}
+
+hr {
+    border: 0.5px solid rgb(48, 48, 48);
+}
+
+input {
+    display: flex;
+    font-size: 1.2em;
+    text-align: center;
+    color: rgb(70, 70, 70);
+}
+
+button {
+    border: 1px solid rgb(223, 223, 223);
+    background-color: rgb(232, 232, 232);
+    color: rgb(48, 48, 48);
 }

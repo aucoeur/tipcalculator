@@ -14,9 +14,9 @@ function calcTotal() {
     let total = bill + tip
     let split = total / people
 
-    displayTip.textContent = tip.toFixed(2)
-    displayTotal.textContent = total.toFixed(2)
-    displaySplit.textContent = split.toFixed(2)
+    displayTip.textContent = `\$ ${tip.toFixed(2)}`
+    displayTotal.textContent = `\$ ${total.toFixed(2)}`
+    displaySplit.textContent = `\$ ${split.toFixed(2)}`
 }
 
 inputBill.addEventListener('change', function(e) {
